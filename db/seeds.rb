@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Branch.destroy_all
+Bird.destroy_all
+Tree.destroy_all
+
+macaw = Bird.create name: "Macaw"
+toucan = Bird.create name: "Toucan"
+flamingo = Bird.create name: "Flamingo"
+
+oak = Tree.create name: "Oak"
+redwood = Tree.create name: "Redwood"
+pine = Tree.create name: "Pine"
+dead = Tree.create name: "Dead"
+
+Branch.create bird: macaw, tree: oak
+Branch.create bird: toucan, tree: oak
+Branch.create bird: flamingo, tree: oak
+Branch.create bird: toucan, tree: redwood
+Branch.create bird: macaw, tree: dead
+Branch.create bird: toucan, tree: pine
+Branch.create bird: flamingo, tree: pine
+Branch.create bird: flamingo, tree: dead
+Branch.create bird: macaw, tree: redwood
+
